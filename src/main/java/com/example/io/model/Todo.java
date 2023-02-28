@@ -4,5 +4,5 @@ public record Todo(
         Integer id,
         String title,
         String desc,
-        Status status) {
+        String status) {
 }

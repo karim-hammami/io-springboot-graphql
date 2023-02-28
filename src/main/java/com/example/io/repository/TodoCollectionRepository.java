@@ -20,6 +20,7 @@ public class TodoCollectionRepository {
 
     public Todo create(Todo todo) {
         todoList.add(todo);
+        System.out.print(todo);
         return todo;
     }
 }
