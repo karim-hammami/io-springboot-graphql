@@ -2,6 +2,17 @@ type Query {
         todos: [Todo]
 }
 
+type Mutation {
+        addTodo(todo: TodoInput): Todo
+}
+
+input TodoInput {
+        id: ID!
+        title: String!
+        desc: String!
+        status: String!
+}
+
 type Todo {
         id: ID!
         title: String!

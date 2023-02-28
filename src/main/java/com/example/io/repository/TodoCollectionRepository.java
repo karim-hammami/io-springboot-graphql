@@ -18,7 +18,8 @@ public class TodoCollectionRepository {
         return todoList;
     }
 
-    public void create(Todo todo) {
+    public Todo create(Todo todo) {
         todoList.add(todo);
+        return todo;
     }
 }
