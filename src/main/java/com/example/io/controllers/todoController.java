@@ -20,14 +20,9 @@ public class todoController {
         return repository.findAll();
     }
 
-    record TodoInput(int id, String title, String desc, String status) {
-    }
-
     @MutationMapping
     Todo addTodo(@Argument int id, @Argument String title, @Argument String desc, @Argument String status) {
-        System.out.print("executed");
         Todo newTodo = new Todo(id, title, desc, status);
-        System.out.print(newTodo);
         return repository.create(newTodo);
     }
 

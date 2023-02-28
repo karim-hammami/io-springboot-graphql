@@ -6,13 +6,6 @@ type Mutation {
         addTodo(id: ID!,title: String!,desc: String!,status: String!): Todo
 }
 
-input TodoInput {
-        id: ID!
-        title: String!
-        desc: String!
-        status: String!
-}
-
 type Todo {
         id: ID!
         title: String!
