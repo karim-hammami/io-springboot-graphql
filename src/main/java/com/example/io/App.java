@@ -1,7 +1,13 @@
 package com.example.io;
 
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.example.io.model.Status;
+import com.example.io.model.Todo;
+import com.example.io.repository.TodoCollectionRepository;
 
 @SpringBootApplication
 public class App {
@@ -10,4 +16,11 @@ public class App {
         SpringApplication.run(App.class, args);
     }
 
+    @Bean
+    ApplicationRunner applicationRunner(TodoCollectionRepository todoCollectionRepository) {
+        return args -> {
+            Todo gym = new Todo(1, "gym", "goto gym", Status.Pending);
+            todoCollectionRepository.create(gym);
+        };
+    }
 }
