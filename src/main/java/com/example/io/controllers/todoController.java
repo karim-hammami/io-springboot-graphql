@@ -24,11 +24,11 @@ public class todoController {
     }
 
     @MutationMapping
-    Todo addTodo(@Argument TodoInput input) {
+    Todo addTodo(@Argument int id, @Argument String title, @Argument String desc, @Argument String status) {
         System.out.print("executed");
-        Todo newTodo = new Todo(input.id(), input.title(), input.desc(), input.status());
+        Todo newTodo = new Todo(id, title, desc, status);
         System.out.print(newTodo);
-        return newTodo;
+        return repository.create(newTodo);
     }
 
 }

@@ -3,7 +3,7 @@ type Query {
 }
 
 type Mutation {
-        addTodo(todo: TodoInput): Todo
+        addTodo(id: ID!,title: String!,desc: String!,status: String!): Todo
 }
 
 input TodoInput {
